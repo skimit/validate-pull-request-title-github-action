@@ -1,0 +1,11 @@
+name: 'Pull Request Title Validation'
+description: 'Validates Pull Request Title to match ticket identifier followed by a small description'
+inputs:
+  pr-title:
+    description: 'Pull Request Title'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.pr-title }}
