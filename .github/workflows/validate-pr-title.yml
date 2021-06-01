@@ -1,0 +1,19 @@
+name: 'Validate Pull Request Title'
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+
+jobs:
+  validate-pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Pull Request Title Validation
+        uses: skimit/validate-pull-request-title-github-action@v1.0.0
+        with:
+          pr-title: "${{ github.event.pull_request.title }}"
