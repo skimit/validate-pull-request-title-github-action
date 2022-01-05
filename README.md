@@ -25,8 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Validate PR Title
-        uses: actions/pull-request-title-validation@v1
+      - name: Pull Request Title Validation
+        uses: skimit/validate-pull-request-title-github-action@v1.1.0
         with:
           pr-title: "${{ github.event.pull_request.title }}"
 ```
